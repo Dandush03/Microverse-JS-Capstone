@@ -121,6 +121,30 @@ eval("\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function mem
 
 /***/ }),
 
+/***/ "./src/config/config.js":
+/*!******************************!*\
+  !*** ./src/config/config.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _const_variable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./const-variable */ \"./src/config/const-variable.js\");\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  // eslint-disable-next-line no-undef\n  type: Phaser.AUTO,\n  width: _const_variable__WEBPACK_IMPORTED_MODULE_0__[\"GAME_WIDTH\"],\n  height: _const_variable__WEBPACK_IMPORTED_MODULE_0__[\"GAME_HEIGHT\"],\n});\n\n//# sourceURL=webpack:///./src/config/config.js?");
+
+/***/ }),
+
+/***/ "./src/config/const-variable.js":
+/*!**************************************!*\
+  !*** ./src/config/const-variable.js ***!
+  \**************************************/
+/*! exports provided: GAME_HEIGHT, GAME_WIDTH */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"GAME_HEIGHT\", function() { return GAME_HEIGHT; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"GAME_WIDTH\", function() { return GAME_WIDTH; });\nconst GAME_HEIGHT = 600;\nconst GAME_WIDTH = 800;\n\n\n//# sourceURL=webpack:///./src/config/const-variable.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -141,7 +165,79 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _stylesheet_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../stylesheet/main.scss */ \"./src/stylesheet/main.scss\");\n/* harmony import */ var _stylesheet_main_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_stylesheet_main_scss__WEBPACK_IMPORTED_MODULE_0__);\n\n\nconsole.log('Hello World!');\n\n\n//# sourceURL=webpack:///./src/module/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _stylesheet_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../stylesheet/main.scss */ \"./src/stylesheet/main.scss\");\n/* harmony import */ var _stylesheet_main_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_stylesheet_main_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _config_config__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../config/config */ \"./src/config/config.js\");\n/* harmony import */ var _scenes_boot__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../scenes/boot */ \"./src/scenes/boot.js\");\n/* harmony import */ var _scenes_preload__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../scenes/preload */ \"./src/scenes/preload.js\");\n/* harmony import */ var _scenes_title__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../scenes/title */ \"./src/scenes/title.js\");\n/* harmony import */ var _scenes_option__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../scenes/option */ \"./src/scenes/option.js\");\n/* harmony import */ var _scenes_credits__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../scenes/credits */ \"./src/scenes/credits.js\");\n/* harmony import */ var _scenes_game__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../scenes/game */ \"./src/scenes/game.js\");\n\n\n\n\n\n\n\n\n\n// eslint-disable-next-line no-undef\nclass Game extends Phaser.Game {\n  constructor() {\n    super(_config_config__WEBPACK_IMPORTED_MODULE_1__[\"default\"]);\n    this.scene.add('Boot', _scenes_boot__WEBPACK_IMPORTED_MODULE_2__[\"default\"]);\n    this.scene.add('Preload', _scenes_preload__WEBPACK_IMPORTED_MODULE_3__[\"default\"]);\n    this.scene.add('Title', _scenes_title__WEBPACK_IMPORTED_MODULE_4__[\"default\"]);\n    this.scene.add('Options', _scenes_option__WEBPACK_IMPORTED_MODULE_5__[\"default\"]);\n    this.scene.add('Credits', _scenes_credits__WEBPACK_IMPORTED_MODULE_6__[\"default\"]);\n    this.scene.add('Game', _scenes_game__WEBPACK_IMPORTED_MODULE_7__[\"default\"]);\n    this.scene.start('Boot');\n  }\n}\n\nwindow.game = new Game();\n\n\n//# sourceURL=webpack:///./src/module/main.js?");
+
+/***/ }),
+
+/***/ "./src/scenes/boot.js":
+/*!****************************!*\
+  !*** ./src/scenes/boot.js ***!
+  \****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return BootScene; });\n// eslint-disable-next-line no-undef\nclass BootScene extends Phaser.Scene {\n  constructor() {\n    super('Boot');\n  }\n\n  preload() {\n    this.load.image('logo', 'https://res.cloudinary.com/dl-cultures/image/upload/v1588612118/logo/HeroLogo.svg');\n  }\n\n  create() {\n    this.scene.start('Preload');\n  }\n}\n\n//# sourceURL=webpack:///./src/scenes/boot.js?");
+
+/***/ }),
+
+/***/ "./src/scenes/credits.js":
+/*!*******************************!*\
+  !*** ./src/scenes/credits.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return CreditsScene; });\n/* harmony import */ var _config_const_variable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../config/const-variable */ \"./src/config/const-variable.js\");\n\n\n// eslint-disable-next-line no-undef\nclass CreditsScene extends Phaser.Scene {\n  constructor() {\n    super('Credits');\n  }\n\n  preload() {\n    this.load.image('logo', 'https://res.cloudinary.com/dl-cultures/image/upload/v1588612118/logo/HeroLogo.svg');\n  }\n\n  create() {\n    this.add.image(_config_const_variable__WEBPACK_IMPORTED_MODULE_0__[\"GAME_WIDTH\"] - 34, _config_const_variable__WEBPACK_IMPORTED_MODULE_0__[\"GAME_HEIGHT\"] - 34, 'logo').setScale(0.3);\n  }\n}\n\n//# sourceURL=webpack:///./src/scenes/credits.js?");
+
+/***/ }),
+
+/***/ "./src/scenes/game.js":
+/*!****************************!*\
+  !*** ./src/scenes/game.js ***!
+  \****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return GameScene; });\n/* harmony import */ var _config_const_variable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../config/const-variable */ \"./src/config/const-variable.js\");\n\n\n// eslint-disable-next-line no-undef\nclass GameScene extends Phaser.Scene {\n  constructor() {\n    super('Game');\n  }\n\n  preload() {\n    this.load.image('logo', 'https://res.cloudinary.com/dl-cultures/image/upload/v1588612118/logo/HeroLogo.svg');\n  }\n\n  create() {\n    this.add.image(_config_const_variable__WEBPACK_IMPORTED_MODULE_0__[\"GAME_WIDTH\"] - 34, _config_const_variable__WEBPACK_IMPORTED_MODULE_0__[\"GAME_HEIGHT\"] - 34, 'logo').setScale(0.3);\n  }\n}\n\n//# sourceURL=webpack:///./src/scenes/game.js?");
+
+/***/ }),
+
+/***/ "./src/scenes/option.js":
+/*!******************************!*\
+  !*** ./src/scenes/option.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return OptionsScene; });\n/* harmony import */ var _config_const_variable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../config/const-variable */ \"./src/config/const-variable.js\");\n\n\n// eslint-disable-next-line no-undef\nclass OptionsScene extends Phaser.Scene {\n  constructor() {\n    super('Options');\n  }\n\n  preload() {\n    this.load.image('logo', 'https://res.cloudinary.com/dl-cultures/image/upload/v1588612118/logo/HeroLogo.svg');\n  }\n\n  create() {\n    this.add.image(_config_const_variable__WEBPACK_IMPORTED_MODULE_0__[\"GAME_WIDTH\"] - 34, _config_const_variable__WEBPACK_IMPORTED_MODULE_0__[\"GAME_HEIGHT\"] - 34, 'logo').setScale(0.3);\n  }\n}\n\n//# sourceURL=webpack:///./src/scenes/option.js?");
+
+/***/ }),
+
+/***/ "./src/scenes/preload.js":
+/*!*******************************!*\
+  !*** ./src/scenes/preload.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return PreloadScene; });\n/* harmony import */ var _config_const_variable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../config/const-variable */ \"./src/config/const-variable.js\");\n\n// eslint-disable-next-line no-undef\nclass PreloadScene extends Phaser.Scene {\n  constructor() {\n    super('Preload');\n  }\n\n  preload() {\n    this.load.image('sky', '../src/assets/sky.png');\n    this.add.image(_config_const_variable__WEBPACK_IMPORTED_MODULE_0__[\"GAME_WIDTH\"] / 2, _config_const_variable__WEBPACK_IMPORTED_MODULE_0__[\"GAME_HEIGHT\"] / 2, 'logo');\n\n    // display progress bar\n    const progressBar = this.add.graphics();\n    const progressBox = this.add.graphics();\n    progressBox.fillStyle(0x222222, 0.8);\n    progressBox.fillRect(240, 270, 320, 50);\n\n    const loadingText = this.make.text({\n      x: _config_const_variable__WEBPACK_IMPORTED_MODULE_0__[\"GAME_WIDTH\"] / 2,\n      y: _config_const_variable__WEBPACK_IMPORTED_MODULE_0__[\"GAME_HEIGHT\"] / 2 - 50,\n      text: 'Loading...',\n      style: {\n        font: '20px monospace',\n        fill: '#ffffff',\n      },\n    });\n    loadingText.setOrigin(0.5, 0.5);\n\n    const percentText = this.make.text({\n      x: _config_const_variable__WEBPACK_IMPORTED_MODULE_0__[\"GAME_WIDTH\"] / 2,\n      y: _config_const_variable__WEBPACK_IMPORTED_MODULE_0__[\"GAME_HEIGHT\"] / 2 - 5,\n      text: '0%',\n      style: {\n        font: '18px monospace',\n        fill: '#ffffff',\n      },\n    });\n    percentText.setOrigin(0.5, 0.5);\n\n    const assetText = this.make.text({\n      x: _config_const_variable__WEBPACK_IMPORTED_MODULE_0__[\"GAME_WIDTH\"] / 2,\n      y: _config_const_variable__WEBPACK_IMPORTED_MODULE_0__[\"GAME_HEIGHT\"] / 2 + 50,\n      text: '',\n      style: {\n        font: '18px monospace',\n        fill: '#ffffff',\n      },\n    });\n    assetText.setOrigin(0.5, 0.5);\n\n    // update progress bar\n    this.load.on('progress', (value) => {\n      const tempVal = parseInt(value, 10);\n      percentText.setText(`${(tempVal * 100)}%`);\n      progressBar.clear();\n      progressBar.fillStyle(0xffffff, 1);\n      progressBar.fillRect(250, 280, 300 * value, 30);\n    });\n\n    // update file progress text\n    this.load.on('fileprogress', (file) => {\n      assetText.setText(`Loading asset: ${file.key}`);\n    });\n\n    // remove progress bar when complete\n    this.load.on('complete', () => {\n      progressBar.destroy();\n      progressBox.destroy();\n      loadingText.destroy();\n      percentText.destroy();\n      assetText.destroy();\n      this.ready();\n    });\n    this.timedEvent = this.time.delayedCall(3000, this.ready, [], this);\n  }\n\n  init() {\n    this.readyCount = 0;\n  }\n\n  ready() {\n    this.readyCount += 1;\n    if (this.readyCount === 2) {\n      this.scene.start('Title');\n    }\n  }\n}\n\n//# sourceURL=webpack:///./src/scenes/preload.js?");
+
+/***/ }),
+
+/***/ "./src/scenes/title.js":
+/*!*****************************!*\
+  !*** ./src/scenes/title.js ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return TitleScene; });\n/* harmony import */ var _config_const_variable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../config/const-variable */ \"./src/config/const-variable.js\");\n\n\n// eslint-disable-next-line no-undef\nclass TitleScene extends Phaser.Scene {\n  constructor() {\n    super('Title');\n  }\n\n  create() {\n    const titleText = this.make.text({\n      x: _config_const_variable__WEBPACK_IMPORTED_MODULE_0__[\"GAME_WIDTH\"] / 2,\n      y: _config_const_variable__WEBPACK_IMPORTED_MODULE_0__[\"GAME_HEIGHT\"] / 2,\n      text: 'This Is My Title',\n      style: {\n        font: '18px monospace',\n        fill: '#ffffff',\n      },\n    });\n    titleText.setOrigin(0.5, 0);\n\n    this.add.image(_config_const_variable__WEBPACK_IMPORTED_MODULE_0__[\"GAME_WIDTH\"] - 34, _config_const_variable__WEBPACK_IMPORTED_MODULE_0__[\"GAME_HEIGHT\"] - 34, 'logo').setScale(0.3);\n  }\n}\n\n//# sourceURL=webpack:///./src/scenes/title.js?");
 
 /***/ }),
 
