@@ -5,10 +5,13 @@ export default class PreloadScene extends Phaser.Scene {
     super('Preload');
   }
 
-  preload() {
-    this.load.image('sky', '../src/assets/sky.png');
-    this.add.image(GAME_WIDTH / 2, GAME_HEIGHT / 2, 'logo');
 
+  preload() {
+    this.load.image('playGame', '../src/assets/ui/play-game.png');
+    this.load.image('settings', '../src/assets/ui/settings.png');
+    this.load.image('sky', '../src/assets/sky.png');
+
+    this.add.image(GAME_WIDTH / 2, GAME_HEIGHT / 2, 'logo');
     // display progress bar
     const progressBar = this.add.graphics();
     const progressBox = this.add.graphics();
@@ -71,7 +74,7 @@ export default class PreloadScene extends Phaser.Scene {
       assetText.destroy();
       this.ready();
     });
-    this.timedEvent = this.time.delayedCall(3000, this.ready, [], this);
+    this.timedEvent = this.time.delayedCall(1000, this.ready, [], this);
   }
 
   init() {

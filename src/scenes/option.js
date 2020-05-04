@@ -6,11 +6,8 @@ export default class OptionsScene extends Phaser.Scene {
     super('Options');
   }
 
-  preload() {
-    this.load.image('logo', 'https://res.cloudinary.com/dl-cultures/image/upload/v1588612118/logo/HeroLogo.svg');
-  }
-
   create() {
-    this.add.image(GAME_WIDTH - 34, GAME_HEIGHT - 34, 'logo').setScale(0.3);
+    this.add.image(GAME_WIDTH / 2, GAME_HEIGHT / 2, 'sky');
+    this.add.image(GAME_WIDTH, GAME_HEIGHT, 'logo').setScale(0.3);
   }
 }

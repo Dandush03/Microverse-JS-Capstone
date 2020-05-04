@@ -7,16 +7,25 @@ export default class TitleScene extends Phaser.Scene {
   }
 
   create() {
-    const titleText = this.make.text({
-      x: GAME_WIDTH / 2,
-      y: GAME_HEIGHT / 2,
-      text: 'This Is My Title',
-      style: {
-        font: '18px monospace',
-        fill: '#ffffff',
-      },
+    this.add.image(GAME_WIDTH / 2, (GAME_HEIGHT / 2), 'sky');
+
+    this.gameBtn = this.add.image(GAME_WIDTH / 2, (GAME_HEIGHT / 2) - 100, 'playGame').setScale(0.15).setInteractive();
+    this.gameBtn.on('pointerdown', () => {
+      this.scene.start('Boot');
     });
-    titleText.setOrigin(0.5, 0);
+
+    this.settingsBtn = this.add.image(GAME_WIDTH / 2, (GAME_HEIGHT / 2) + 50, 'settings').setScale(0.15).setInteractive();
+    this.settingsBtn.on('pointerdown', () => {
+      this.scene.start('Options');
+    });
+
+    this.input.on('pointerover', (event, gameObjects) => {
+      gameObjects[0].setScale(0.18);
+    });
+
+    this.input.on('pointerout', (event, gameObjects) => {
+      gameObjects[0].setScale(0.15);
+    });
 
     this.add.image(GAME_WIDTH - 34, GAME_HEIGHT - 34, 'logo').setScale(0.3);
   }
