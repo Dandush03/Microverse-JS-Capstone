@@ -60,8 +60,8 @@ export default class PreloadScene extends Phaser.Scene {
 
     // update progress bar
     this.load.on('progress', (value) => {
-      const tempVal = parseInt(value, 10);
-      percentText.setText(`${(tempVal * 100)}%`);
+      // eslint-disable-next-line radix
+      percentText.setText(`${parseInt(value * 100)}%`);
       progressBar.clear();
       progressBar.fillStyle(0xffffff, 1);
       progressBar.fillRect(250, 280, 300 * value, 30);
