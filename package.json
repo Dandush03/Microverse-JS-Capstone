@@ -8,8 +8,7 @@
     "w-jest": "jest --watch",
     "dev": "webpack --mode development",
     "w-web": "webpack --watch --mode development",
-    "build": "webpack --mode production",
-    "start": "node /dist/main.bundle.js"
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
