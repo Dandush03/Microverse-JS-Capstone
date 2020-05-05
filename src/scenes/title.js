@@ -12,10 +12,10 @@ export default class TitleScene extends Phaser.Scene {
 
     this.soundModel = this.sys.game.globals.soundModel;
     if (this.soundModel.musicOn === true && this.soundModel.bgMusicPlaying === false) {
-     /*  this.bgMusic = this.sound.add('bgMusic', { volume: 0.5, loop: true });
+      this.bgMusic = this.sound.add('bgMusic', { volume: 0.5, loop: true });
       this.bgMusic.play();
       this.soundModel.bgMusicPlaying = true;
-      this.sys.game.globals.bgMusic = this.bgMusic; */
+      this.sys.game.globals.bgMusic = this.bgMusic;
     }
 
     this.gameBtn = this.add.image(GAME_WIDTH / 2, (GAME_HEIGHT / 2) - 210, 'playGame').setScale(0.15).setInteractive();
