@@ -7,16 +7,16 @@ export default class PreloadScene extends Phaser.Scene {
 
 
   preload() {
-    this.load.image('playGame', '../src/assets/ui/play-game.png');
-    this.load.image('settings', '../src/assets/ui/settings.png');
-    this.load.image('credits', '../src/assets/ui/credits.png');
-    this.load.image('scores', '../src/assets/ui/score.png');
-    this.load.image('back', '../src/assets/ui/back.png');
-    this.load.image('checkedBox', '../src/assets/ui/checked.png');
-    this.load.image('box', '../src/assets/ui/unchecked.png');
-    this.load.image('sky', '../src/assets/sky.png');
+    this.load.image('playGame', './assets/ui/play-game.png');
+    this.load.image('settings', './assets/ui/settings.png');
+    this.load.image('credits', './assets/ui/credits.png');
+    this.load.image('scores', './assets/ui/score.png');
+    this.load.image('back', './assets/ui/back.png');
+    this.load.image('checkedBox', './assets/ui/checked.png');
+    this.load.image('box', './assets/ui/unchecked.png');
+    this.load.image('sky', './assets/sky.png');
 
-    this.load.audio('bgMusic', '../src/assets/ui/bgMusic.mp3');
+    this.load.audio('bgMusic', './assets/ui/bgMusic.mp3');
 
     this.add.image(GAME_WIDTH / 2, GAME_HEIGHT / 2, 'logo');
     // display progress bar

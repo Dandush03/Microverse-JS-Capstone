@@ -8,7 +8,8 @@
     "w-jest": "jest --watch",
     "dev": "webpack --mode development",
     "w-web": "webpack --watch --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -32,7 +33,8 @@
     "sass-loader": "^8.0.2",
     "style-loader": "^1.1.4",
     "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.13.0",
