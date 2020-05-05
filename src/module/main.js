@@ -8,10 +8,14 @@ import CreditsScene from '../scenes/credits';
 import GameScene from '../scenes/game';
 import ScoresScene from '../scenes/score';
 
+import Model from './sound';
+
 // eslint-disable-next-line no-undef
 class Game extends Phaser.Game {
   constructor() {
     super(config);
+    const soundModel = new Model();
+    this.globals = { soundModel, bgMusic: null };
     this.scene.add('Boot', BootScene);
     this.scene.add('Preload', PreloadScene);
     this.scene.add('Title', TitleScene);

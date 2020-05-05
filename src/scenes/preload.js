@@ -16,6 +16,8 @@ export default class PreloadScene extends Phaser.Scene {
     this.load.image('box', '../src/assets/ui/unchecked.png');
     this.load.image('sky', '../src/assets/sky.png');
 
+    this.load.audio('bgMusic', '../src/assets/ui/bgMusic.mp3');
+
     this.add.image(GAME_WIDTH / 2, GAME_HEIGHT / 2, 'logo');
     // display progress bar
     const progressBar = this.add.graphics();
