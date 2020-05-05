@@ -10,6 +10,10 @@ export default class PreloadScene extends Phaser.Scene {
     this.load.image('playGame', '../src/assets/ui/play-game.png');
     this.load.image('settings', '../src/assets/ui/settings.png');
     this.load.image('credits', '../src/assets/ui/credits.png');
+    this.load.image('scores', '../src/assets/ui/score.png');
+    this.load.image('back', '../src/assets/ui/back.png');
+    this.load.image('checkedBox', '../src/assets/ui/checked.png');
+    this.load.image('box', '../src/assets/ui/unchecked.png');
     this.load.image('sky', '../src/assets/sky.png');
 
     this.add.image(GAME_WIDTH / 2, GAME_HEIGHT / 2, 'logo');

@@ -10,18 +10,22 @@ export default class TitleScene extends Phaser.Scene {
     this.add.image(GAME_WIDTH / 2, (GAME_HEIGHT / 2), 'sky');
     this.add.image(GAME_WIDTH - 34, GAME_HEIGHT - 34, 'logo').setScale(0.3);
 
-
-    this.gameBtn = this.add.image(GAME_WIDTH / 2, (GAME_HEIGHT / 2) - 150, 'playGame').setScale(0.15).setInteractive();
+    this.gameBtn = this.add.image(GAME_WIDTH / 2, (GAME_HEIGHT / 2) - 210, 'playGame').setScale(0.15).setInteractive();
     this.gameBtn.on('pointerdown', () => {
-      this.scene.start('Boot');
+      this.scene.start('Options');
     });
 
-    this.settingsBtn = this.add.image(GAME_WIDTH / 2, (GAME_HEIGHT / 2), 'settings').setScale(0.15).setInteractive();
+    this.settingsBtn = this.add.image(GAME_WIDTH / 2, (GAME_HEIGHT / 2) - 100, 'settings').setScale(0.15).setInteractive();
     this.settingsBtn.on('pointerdown', () => {
       this.scene.start('Options');
     });
 
-    this.settingsBtn = this.add.image(GAME_WIDTH / 2, (GAME_HEIGHT / 2) + 150, 'credits').setScale(0.15).setInteractive();
+    this.gameBtn = this.add.image(GAME_WIDTH / 2, (GAME_HEIGHT / 2) + 20, 'scores').setScale(0.15).setInteractive();
+    this.gameBtn.on('pointerdown', () => {
+      this.scene.start('Scores');
+    });
+
+    this.settingsBtn = this.add.image(GAME_WIDTH / 2, (GAME_HEIGHT / 2) + 130, 'credits').setScale(0.15).setInteractive();
     this.settingsBtn.on('pointerdown', () => {
       this.scene.start('Credits');
     });
@@ -33,6 +37,5 @@ export default class TitleScene extends Phaser.Scene {
     this.input.on('pointerout', (event, gameObjects) => {
       gameObjects[0].setScale(0.15);
     });
-
   }
 }

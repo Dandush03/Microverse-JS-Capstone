@@ -6,6 +6,7 @@ import TitleScene from '../scenes/title';
 import OptionsScene from '../scenes/option';
 import CreditsScene from '../scenes/credits';
 import GameScene from '../scenes/game';
+import ScoresScene from '../scenes/score';
 
 // eslint-disable-next-line no-undef
 class Game extends Phaser.Game {
@@ -16,6 +17,7 @@ class Game extends Phaser.Game {
     this.scene.add('Title', TitleScene);
     this.scene.add('Options', OptionsScene);
     this.scene.add('Credits', CreditsScene);
+    this.scene.add('Scores', ScoresScene);
     this.scene.add('Game', GameScene);
     this.scene.start('Boot');
   }

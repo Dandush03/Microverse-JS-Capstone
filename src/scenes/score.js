@@ -1,9 +1,9 @@
 import { GAME_HEIGHT, GAME_WIDTH } from '../config/const-variable';
 
 // eslint-disable-next-line no-undef
-export default class CreditsScene extends Phaser.Scene {
+export default class ScoresScene extends Phaser.Scene {
   constructor() {
-    super('Credits');
+    super('Scores');
   }
 
   create() {
