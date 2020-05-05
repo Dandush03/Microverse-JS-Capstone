@@ -9,7 +9,7 @@
     "dev": "webpack --mode development",
     "w-web": "webpack --watch --mode development",
     "build": "webpack --mode production",
-    "start": "node /dist/index.js"
+    "start": "node /dist/main.bundle.js"
   },
   "repository": {
     "type": "git",
