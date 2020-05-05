@@ -1,0 +1,3 @@
+const GAME_HEIGHT = 600;
+const GAME_WIDTH = 800;
+export { GAME_HEIGHT, GAME_WIDTH };
