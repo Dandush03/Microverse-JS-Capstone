@@ -1,0 +1,85 @@
+import { GAME_HEIGHT, GAME_WIDTH } from '../config/const-variable';
+
+// eslint-disable-next-line no-undef
+export default class UserScene extends Phaser.Scene {
+  constructor() {
+    super('User');
+  }
+
+  create() {
+    this.userModel = this.sys.game.globals.userModel;
+
+    this.add.image(GAME_WIDTH / 2, (GAME_HEIGHT / 2), 'sky');
+    this.add.image(GAME_WIDTH - 34, GAME_HEIGHT - 34, 'logo').setScale(0.3);
+
+    this.gameBtn = this.add.image(50, 30, 'back').setScale(0.15).setInteractive();
+    this.gameBtn.on('pointerdown', () => {
+      this.scene.start('Title');
+    });
+
+    this.input.on('pointerover', (event, gameObjects) => {
+      gameObjects[0].setScale(1.1);
+    });
+
+    this.input.on('pointerout', (event, gameObjects) => {
+      gameObjects[0].setScale(1);
+    });
+
+    this.lbl = this.make.text({
+      text: 'What\'s your name?',
+      style: {
+        font: '36px monospace',
+        fill: '#422115',
+      },
+    });
+    this.lbl.x = (GAME_WIDTH / 2) - (this.lbl.width / 2);
+    this.lbl.y = (GAME_HEIGHT / 4);
+
+    this.nameInput = this.make.text({
+      text: 'Yes, Click Here',
+      style: {
+        font: '36px monospace',
+        fill: '#422115',
+      },
+      selected: false,
+    });
+    this.nameInput.x = (GAME_WIDTH / 2) - (this.nameInput.width / 2);
+    this.nameInput.y = (GAME_HEIGHT / 3);
+
+    this.nameInput.setInteractive();
+    this.input.on('pointerdown', (event, gameObjects) => {
+      if (gameObjects.length !== 0) {
+        gameObjects[0].selected = true;
+        this.nameInput.text = '';
+      } else {
+        this.nameInput.selected = false;
+        if (this.nameInput.text === '') {
+          this.nameInput.text = 'Yes, Click Here';
+          this.nameInput.x = (GAME_WIDTH / 2) - (this.nameInput.width / 2);
+          this.nameInput.y = (GAME_HEIGHT / 3);
+        }
+      }
+    });
+
+    this.input.keyboard.on('keydown', (event) => {
+      if (this.nameInput.selected === true) {
+        if (event.keyCode >= 65 && event.keyCode <= 90) {
+          this.nameInput.text += event.key;
+        } else if (event.keyCode === 32) {
+          this.nameInput.text += ' ';
+        } else if (event.keyCode === 8) {
+          this.nameInput.text = this.nameInput.text.slice(0, -1);
+        } else if (event.keyCode === 13) {
+          this.start();
+        }
+        this.nameInput.x = (GAME_WIDTH / 2) - (this.nameInput.width / 2);
+        this.nameInput.y = (GAME_HEIGHT / 3);
+      }
+    });
+  }
+
+  start() {
+    this.userModel.user = this.nameInput.text;
+    this.scene.start('Game');
+  }
+}

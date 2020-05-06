@@ -20,7 +20,7 @@ export default class TitleScene extends Phaser.Scene {
 
     this.gameBtn = this.add.image(GAME_WIDTH / 2, (GAME_HEIGHT / 2) - 210, 'playGame').setScale(0.15).setInteractive();
     this.gameBtn.on('pointerdown', () => {
-      this.scene.start('Options');
+      this.scene.start('User');
     });
 
     this.settingsBtn = this.add.image(GAME_WIDTH / 2, (GAME_HEIGHT / 2) - 100, 'settings').setScale(0.15).setInteractive();
