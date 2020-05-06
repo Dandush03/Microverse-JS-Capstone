@@ -5,7 +5,6 @@ export default class PreloadScene extends Phaser.Scene {
     super('Preload');
   }
 
-
   preload() {
     this.load.image('playGame', './assets/ui/play-game.png');
     this.load.image('settings', './assets/ui/settings.png');
@@ -15,8 +14,14 @@ export default class PreloadScene extends Phaser.Scene {
     this.load.image('checkedBox', './assets/ui/checked.png');
     this.load.image('box', './assets/ui/unchecked.png');
     this.load.image('sky', './assets/sky.png');
+    //
+    // GAME
+    //
     this.load.image('ground', './assets/game/ground.png');
-
+    this.load.image('star', './assets/game/star2.png');
+    this.load.image('bigStar', './assets/game/star3.png');
+    this.load.spritesheet('face', 'assets/game/metalface78x92.png',
+      { frameWidth: 78, frameHeight: 92 });
     this.load.spritesheet('hero', './assets/game/hero.png',
       { frameWidth: 68.8, frameHeight: 73 });
 
