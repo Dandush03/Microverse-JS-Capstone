@@ -1,5 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-export default class Model {
+export default class Sound {
   constructor() {
     this._soundOn = true;
     this._musicOn = true;

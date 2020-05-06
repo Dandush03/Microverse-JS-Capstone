@@ -7,9 +7,9 @@
     "test": "jest",
     "w-jest": "jest --watch",
     "dev": "webpack --mode development",
-    "w-web": "webpack --watch --mode development",
+    "server": "webpack-dev-server",
     "build": "webpack --mode production",
-    "start": "webpack-dev-server"
+    "start": "./node_modules/webpack/bin/webpack.js -p --progress && node server.js"
   },
   "repository": {
     "type": "git",
@@ -42,6 +42,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.13.0",
     "@fortawesome/free-regular-svg-icons": "^5.13.0",
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
+    "express": "^4.17.1",
     "file-loader": "^6.0.0",
     "phaser": "^3.23.0",
     "url-loader": "^4.1.0"
