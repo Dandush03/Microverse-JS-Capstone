@@ -15,10 +15,8 @@ function collectStar(player, star) {
 }
 
 function destroyGame() {
-  this.scene.pause('Game');
-  const test = this.add.text(GAME_WIDTH / 2, GAME_HEIGHT / 2, 'score: 0', { fontSize: '32px', fill: '#fff' });
-  test.x = (GAME_WIDTH / 2) - (test.width / 2);
-  test.setScrollFactor(0, 0);
+  this.scene.pause();
+  this.scene.launch('EndGame');
 }
 
 // eslint-disable-next-line no-undef

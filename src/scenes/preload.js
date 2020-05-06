@@ -17,6 +17,9 @@ export default class PreloadScene extends Phaser.Scene {
     //
     // GAME
     //
+    this.load.image('replay', './assets/game/replay.png');
+    this.load.image('submit', './assets/game/submit.png');
+    this.load.image('endGame', './assets/game/endgame.png');
     this.load.image('stars', './assets/game/star.png');
     this.load.image('ground', './assets/game/ground.png');
     this.load.image('star', './assets/game/star2.png');
