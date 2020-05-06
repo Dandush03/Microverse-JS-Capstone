@@ -3,6 +3,23 @@ import { GAME_HEIGHT, GAME_WIDTH } from '../config/const-variable';
 let player;
 let platforms;
 let face;
+let stars;
+let score;
+let scoreText;
+
+function collectStar(player, star) {
+  star.disableBody(true, true);
+
+  score += 10;
+  scoreText.setText(`Score: ${score}`);
+}
+
+function destroyGame() {
+  this.scene.pause('Game');
+  const test = this.add.text(GAME_WIDTH / 2, GAME_HEIGHT / 2, 'score: 0', { fontSize: '32px', fill: '#fff' });
+  test.x = (GAME_WIDTH / 2) - (test.width / 2);
+  test.setScrollFactor(0, 0);
+}
 
 // eslint-disable-next-line no-undef
 export default class GameScene extends Phaser.Scene {
@@ -11,6 +28,7 @@ export default class GameScene extends Phaser.Scene {
   }
 
   create() {
+    score = 0;
     this.cameras.main.setBounds(0, 0, GAME_WIDTH * 100, GAME_HEIGHT).setName('main');
 
     platforms = this.physics.add.staticGroup();
@@ -35,7 +53,8 @@ export default class GameScene extends Phaser.Scene {
     player.setCollideWorldBounds(true);
     this.Starfield();
     this.Aliens();
-
+    this.Stars();
+    scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#fff' });
     this.physics.add.collider(player, platforms);
   }
 
@@ -58,6 +77,7 @@ export default class GameScene extends Phaser.Scene {
     }
 
     this.cameras.main.scrollX = player.x - GAME_WIDTH / 2;
+    scoreText.setScrollFactor(0, 0);
   }
 
   Starfield() {
@@ -83,6 +103,22 @@ export default class GameScene extends Phaser.Scene {
     }, this);
   }
 
+  Stars() {
+    // eslint-disable-next-line no-undef
+    const rect = new Phaser.Geom.Rectangle(0, 300, GAME_WIDTH * 100, 150);
+    stars = this.physics.add.group({
+      key: 'stars',
+      repeat: 400,
+      setXY: { x: 12, y: 50, stepX: 70 },
+      allowGravity: false,
+    });
+    // eslint-disable-next-line no-undef
+    Phaser.Actions.RandomRectangle(stars.getChildren(), rect);
+
+    this.physics.add.collider(stars, platforms);
+    this.physics.add.overlap(player, stars, collectStar, null, this);
+  }
+
   Aliens() {
     const config = {
       key: 'metaleyes',
@@ -106,11 +142,7 @@ export default class GameScene extends Phaser.Scene {
       // eslint-disable-next-line no-undef
       face.setVelocity(Phaser.Math.Between(20, 60), Phaser.Math.Between(20, 60));
 
-      if (Math.random() > 0.5) {
-        // face.vel.x *= -1;
-      } else {
-        // face.vel.y *= -1;
-      }
+      this.physics.add.overlap(player, face, destroyGame, null, this);
     }
   }
 }
