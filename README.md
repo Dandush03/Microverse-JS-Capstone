@@ -37,6 +37,8 @@ You can start playing right away, just click [here](https://dl-game.herokuapp.co
 
 This is a very basic game, you need to avoid all does facing that are bouncing on the moon surface, mean while you have to collect as much stars as you can in order to get the higher score.
 
+When the game start you basically have only 3 option arrow Up, Left & Right
+
 ---
 
 ## Coming Soon
@@ -79,7 +81,7 @@ Reach out to me at one of the following places!
 
 ---
 
-## Contributing 🤝
+## Contributing
 
 Contributions, issues, and feature requests are welcome!
 
@@ -93,21 +95,13 @@ Feel free to check the [issues page](./issues/).
 
 ---
 
-## License
-
-[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
-
-- **[MIT license](http://opensource.org/licenses/mit-license.php)**
-- Copyright 2015 © <a href="http://fvcproductions.com" target="_blank">FVCproductions</a>.
-
 ## Author
 
 **Daniel Laloush**
 
-- Portfolio: [dlaloush.me](https://dlaloush.me) (Comming Soon)
+- Portfolio: [dlaloush.me](https://dlaloush.me)
 - LinkedIn: [Daniel Laloush](https://www.linkedin.com/in/daniel-laloush-0a7331a9)
 - Github: [@Dandush03](https://github.com/Dandush03)
 - Twitter: [@d_laloush](https://twitter.com/d_laloush)
 
 Give a ⭐️ if you like this project!
-
