@@ -26,7 +26,7 @@ const ApiGet = async (method, userName = null, scores = null) => {
     response = e;
   }
   const data = await response.json();
-  return data;
+  return data.result;
 };
 
 

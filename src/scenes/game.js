@@ -28,7 +28,6 @@ export default class GameScene extends Phaser.Scene {
   create() {
     score = 0;
     this.cameras.main.setBounds(0, 0, GAME_WIDTH * 100, GAME_HEIGHT).setName('main');
-    // this.logo.setScrollFactor(0);
     platforms = this.physics.add.staticGroup();
 
     // eslint-disable-next-line no-underscore-dangle
@@ -54,7 +53,7 @@ export default class GameScene extends Phaser.Scene {
     this.Stars();
     scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#fff' });
     this.physics.add.collider(player, platforms);
-    this.add.image(GAME_WIDTH - 34, GAME_HEIGHT - 34, 'logo').setScale(0.3).setScrollFactor(0);
+    this.add.image(GAME_WIDTH - 68, GAME_HEIGHT - 34, 'logo').setScale(0.3).setScrollFactor(0);
   }
 
   update() {

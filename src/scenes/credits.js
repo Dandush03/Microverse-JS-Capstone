@@ -8,7 +8,7 @@ export default class CreditsScene extends Phaser.Scene {
 
   create() {
     this.add.image(GAME_WIDTH / 2, (GAME_HEIGHT / 2), 'sky');
-    this.add.image(GAME_WIDTH - 34, GAME_HEIGHT - 34, 'logo').setScale(0.3);
+    this.add.image(GAME_WIDTH - 68, GAME_HEIGHT - 34, 'logo').setScale(0.3);
 
     this.gameBtn = this.add.image(110, 50, 'back').setInteractive();
     this.gameBtn.on('pointerdown', () => {
