@@ -12,9 +12,14 @@ export default class UserScene extends Phaser.Scene {
     this.add.image(GAME_WIDTH / 2, (GAME_HEIGHT / 2), 'sky');
     this.add.image(GAME_WIDTH - 34, GAME_HEIGHT - 34, 'logo').setScale(0.3);
 
-    this.gameBtn = this.add.image(50, 30, 'back').setScale(0.15).setInteractive();
+    this.gameBtn = this.add.image(110, 50, 'back').setInteractive();
     this.gameBtn.on('pointerdown', () => {
       this.scene.start('Title');
+    });
+
+    this.gameBtn = this.add.image((GAME_WIDTH / 2), (GAME_HEIGHT / 1.5), 'submit').setInteractive();
+    this.gameBtn.on('pointerdown', () => {
+      this.start();
     });
 
     this.input.on('pointerover', (event, gameObjects) => {
@@ -38,13 +43,14 @@ export default class UserScene extends Phaser.Scene {
     this.nameInput = this.make.text({
       text: 'Yes, Click Here',
       style: {
-        font: '36px monospace',
-        fill: '#422115',
+        font: '40px monospace',
+        fill: '#051a58',
       },
       selected: false,
     });
+    this.nameInput.setFontStyle('bold');
     this.nameInput.x = (GAME_WIDTH / 2) - (this.nameInput.width / 2);
-    this.nameInput.y = (GAME_HEIGHT / 3);
+    this.nameInput.y = (GAME_HEIGHT / 2.5);
 
     this.nameInput.setInteractive();
     this.input.on('pointerdown', (event, gameObjects) => {
@@ -56,7 +62,7 @@ export default class UserScene extends Phaser.Scene {
         if (this.nameInput.text === '') {
           this.nameInput.text = 'Yes, Click Here';
           this.nameInput.x = (GAME_WIDTH / 2) - (this.nameInput.width / 2);
-          this.nameInput.y = (GAME_HEIGHT / 3);
+          this.nameInput.y = (GAME_HEIGHT / 2.5);
         }
       }
     });
@@ -73,7 +79,7 @@ export default class UserScene extends Phaser.Scene {
           this.start();
         }
         this.nameInput.x = (GAME_WIDTH / 2) - (this.nameInput.width / 2);
-        this.nameInput.y = (GAME_HEIGHT / 3);
+        this.nameInput.y = (GAME_HEIGHT / 2.5);
       }
     });
   }

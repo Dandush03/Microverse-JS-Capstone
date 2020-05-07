@@ -10,17 +10,17 @@ export default class CreditsScene extends Phaser.Scene {
     this.add.image(GAME_WIDTH / 2, (GAME_HEIGHT / 2), 'sky');
     this.add.image(GAME_WIDTH - 34, GAME_HEIGHT - 34, 'logo').setScale(0.3);
 
-    this.gameBtn = this.add.image(50, 30, 'back').setScale(0.15).setInteractive();
+    this.gameBtn = this.add.image(110, 50, 'back').setInteractive();
     this.gameBtn.on('pointerdown', () => {
       this.scene.start('Title');
     });
 
     this.input.on('pointerover', (event, gameObjects) => {
-      gameObjects[0].setScale(0.18);
+      gameObjects[0].setScale(1.1);
     });
 
     this.input.on('pointerout', (event, gameObjects) => {
-      gameObjects[0].setScale(0.15);
+      gameObjects[0].setScale(1);
     });
 
     const authorText = this.make.text({
