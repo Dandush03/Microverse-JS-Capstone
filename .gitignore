@@ -104,3 +104,6 @@ typings/
 
 # Local Netlify folder
 .netlify
+
+# GIM Elements
+*.xcf
