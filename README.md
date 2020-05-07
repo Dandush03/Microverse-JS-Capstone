@@ -8,7 +8,7 @@
 
 > My First JS Game
 
-![Recordit GIF](https://raw.githack.com/Dandush03/BLOB/master/DRev/Program.gif)
+![Recordit GIF](game-play.gif)
 
 ---
 
