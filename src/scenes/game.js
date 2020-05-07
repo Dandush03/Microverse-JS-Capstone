@@ -28,7 +28,7 @@ export default class GameScene extends Phaser.Scene {
   create() {
     score = 0;
     this.cameras.main.setBounds(0, 0, GAME_WIDTH * 100, GAME_HEIGHT).setName('main');
-
+    // this.logo.setScrollFactor(0);
     platforms = this.physics.add.staticGroup();
 
     // eslint-disable-next-line no-underscore-dangle
@@ -54,6 +54,7 @@ export default class GameScene extends Phaser.Scene {
     this.Stars();
     scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#fff' });
     this.physics.add.collider(player, platforms);
+    this.add.image(GAME_WIDTH - 34, GAME_HEIGHT - 34, 'logo').setScale(0.3).setScrollFactor(0);
   }
 
   update() {
@@ -118,6 +119,9 @@ export default class GameScene extends Phaser.Scene {
   }
 
   Aliens() {
+    // eslint-disable-next-line no-undef
+    const rect = new Phaser.Geom.Rectangle(800, 300, GAME_WIDTH * 100, 150);
+
     const config = {
       key: 'metaleyes',
       frames: this.anims.generateFrameNumbers('face', { start: 0, end: 4 }),
@@ -126,7 +130,6 @@ export default class GameScene extends Phaser.Scene {
     };
 
     this.anims.create(config);
-
     for (let i = 0; i < 32; i += 1) {
       // eslint-disable-next-line no-undef
       const x = Phaser.Math.Between(100, 30000);
@@ -141,6 +144,8 @@ export default class GameScene extends Phaser.Scene {
       face.setVelocity(Phaser.Math.Between(20, 60), Phaser.Math.Between(20, 60));
 
       this.physics.add.overlap(player, face, destroyGame, null, this);
+      // eslint-disable-next-line no-undef
+      Phaser.Actions.RandomRectangle(face, rect);
     }
   }
 }

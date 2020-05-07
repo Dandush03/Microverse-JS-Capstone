@@ -9,7 +9,7 @@ export default class EndGameScene extends Phaser.Scene {
   create() {
     this.add.image(GAME_WIDTH / 2, (GAME_HEIGHT / 2) - 100, 'endGame').setScrollFactor(0);
 
-    this.replay = this.add.image(GAME_WIDTH / 2 - 100, (GAME_HEIGHT / 2) + 100, 'replay').setScrollFactor(0).setInteractive();
+    this.replay = this.add.image(GAME_WIDTH / 2 - 125, (GAME_HEIGHT / 2) + 100, 'replay').setScrollFactor(0).setInteractive();
     this.replay.on('pointerdown', () => {
       this.scene.start('Game');
     });
@@ -20,7 +20,7 @@ export default class EndGameScene extends Phaser.Scene {
       this.scene.start('Title');
     });
 
-    this.submit = this.add.image(GAME_WIDTH / 2 + 100, (GAME_HEIGHT / 2) + 100, 'submit').setScrollFactor(0).setInteractive();
+    this.submit = this.add.image(GAME_WIDTH / 2 + 125, (GAME_HEIGHT / 2) + 100, 'submit').setScrollFactor(0).setInteractive();
     this.submit.on('pointerdown', () => {
       this.scene.sendToBack('Game');
       this.scene.start('Scores');
