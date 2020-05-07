@@ -8,12 +8,23 @@ export default class EndGameScene extends Phaser.Scene {
 
   create() {
     this.add.image(GAME_WIDTH / 2, (GAME_HEIGHT / 2) - 100, 'endGame').setScrollFactor(0);
+
     this.replay = this.add.image(GAME_WIDTH / 2 - 100, (GAME_HEIGHT / 2) + 100, 'replay').setScrollFactor(0).setInteractive();
     this.replay.on('pointerdown', () => {
       this.scene.start('Game');
     });
-    this.add.image(GAME_WIDTH / 2 + 100, (GAME_HEIGHT / 2) + 100, 'submit').setScrollFactor(0).setInteractive();
 
+    this.menu = this.add.image(GAME_WIDTH / 2, (GAME_HEIGHT / 1.5) + 100, 'menu').setScrollFactor(0).setInteractive();
+    this.menu.on('pointerdown', () => {
+      this.scene.sendToBack('Game');
+      this.scene.start('Title');
+    });
+
+    this.submit = this.add.image(GAME_WIDTH / 2 + 100, (GAME_HEIGHT / 2) + 100, 'submit').setScrollFactor(0).setInteractive();
+    this.submit.on('pointerdown', () => {
+      this.scene.sendToBack('Game');
+      this.scene.start('Scores');
+    });
     this.input.on('pointerover', (event, gameObjects) => {
       gameObjects[0].setScale(1.1);
     });

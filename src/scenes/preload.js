@@ -23,6 +23,7 @@ export default class PreloadScene extends Phaser.Scene {
     this.load.image('endGame', './assets/game/endgame.png');
     this.load.image('stars', './assets/game/star.png');
     this.load.image('ground', './assets/game/ground.png');
+    this.load.image('menu', './assets/game/menu.png');
     this.load.image('star', './assets/game/star2.png');
     this.load.image('bigStar', './assets/game/star3.png');
     this.load.spritesheet('face', 'assets/game/metalface78x92.png',
