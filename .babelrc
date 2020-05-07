@@ -2,5 +2,8 @@
   "presets": ["@babel/preset-env"],
   "ignore": [
     "*.scss"
+  ],
+  "plugins": [
+    "@babel/plugin-transform-runtime"
   ]
 } 
