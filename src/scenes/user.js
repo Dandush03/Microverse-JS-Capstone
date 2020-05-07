@@ -7,8 +7,6 @@ export default class UserScene extends Phaser.Scene {
   }
 
   create() {
-    this.userModel = this.sys.game.globals.userModel;
-
     this.add.image(GAME_WIDTH / 2, (GAME_HEIGHT / 2), 'sky');
     this.add.image(GAME_WIDTH - 68, GAME_HEIGHT - 34, 'logo').setScale(0.3);
 
@@ -85,7 +83,13 @@ export default class UserScene extends Phaser.Scene {
   }
 
   start() {
-    this.userModel.user = this.nameInput.text;
-    this.scene.start('Game');
+    const { text } = this.nameInput;
+    if (text === '' || text === 'Yes, Click Here' || text.length > 9) {
+      // eslint-disable-next-line no-alert
+      alert('Invalid Name: Name should have at More than 1 character and less than 9');
+    } else {
+      this.sys.game.globals.userModel.user = this.nameInput.text;
+      this.scene.start('Game');
+    }
   }
 }

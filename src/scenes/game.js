@@ -16,6 +16,7 @@ function collectStar(player, star) {
 
 function destroyGame() {
   this.scene.pause();
+  this.sys.game.globals.userModel.score = score;
   this.scene.launch('EndGame');
 }
 

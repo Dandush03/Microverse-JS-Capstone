@@ -1,4 +1,5 @@
 import { GAME_HEIGHT, GAME_WIDTH } from '../config/const-variable';
+import ApiGet from '../module/api';
 
 // eslint-disable-next-line no-undef
 export default class EndGameScene extends Phaser.Scene {
@@ -7,6 +8,8 @@ export default class EndGameScene extends Phaser.Scene {
   }
 
   create() {
+    this.userModel = this.sys.game.globals.userModel;
+
     this.add.image(GAME_WIDTH / 2, (GAME_HEIGHT / 2) - 100, 'endGame').setScrollFactor(0);
 
     this.replay = this.add.image(GAME_WIDTH / 2 - 125, (GAME_HEIGHT / 2) + 100, 'replay').setScrollFactor(0).setInteractive();
@@ -22,8 +25,11 @@ export default class EndGameScene extends Phaser.Scene {
 
     this.submit = this.add.image(GAME_WIDTH / 2 + 125, (GAME_HEIGHT / 2) + 100, 'submit').setScrollFactor(0).setInteractive();
     this.submit.on('pointerdown', () => {
-      this.scene.sendToBack('Game');
-      this.scene.start('Scores');
+      ApiGet('POST', this.userModel.user, this.userModel.score)
+        .then(() => {
+          this.scene.sendToBack('Game');
+          this.scene.start('Scores');
+        });
     });
     this.input.on('pointerover', (event, gameObjects) => {
       gameObjects[0].setScale(1.1);
