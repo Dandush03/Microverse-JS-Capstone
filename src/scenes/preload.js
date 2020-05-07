@@ -28,8 +28,10 @@ export default class PreloadScene extends Phaser.Scene {
     this.load.image('bigStar', './assets/game/star3.png');
     this.load.spritesheet('face', 'assets/game/metalface78x92.png',
       { frameWidth: 78, frameHeight: 92 });
-    this.load.spritesheet('hero', './assets/game/hero.png',
-      { frameWidth: 68.8, frameHeight: 73 });
+    this.load.spritesheet('heroRun', './assets/game/hero2.png',
+      { frameWidth: 24, frameHeight: 25 });
+    this.load.spritesheet('heroStand', './assets/game/hero1.png',
+      { frameWidth: 22, frameHeight: 25 });
 
     this.load.audio('bgMusic', './assets/ui/bgMusic.mp3');
 

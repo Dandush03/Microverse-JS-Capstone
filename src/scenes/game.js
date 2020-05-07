@@ -39,16 +39,32 @@ export default class GameScene extends Phaser.Scene {
 
     this.anims.create({
       key: 'right',
-      frames: this.anims.generateFrameNumbers('hero', { start: 0, end: 10 }),
+      frames: this.anims.generateFrameNumbers('heroRun', { start: 0, end: 2 }),
       frameRate: 10,
       repeat: -1,
     });
 
+    this.anims.create({
+      key: 'left',
+      frames: this.anims.generateFrameNumbers('heroRun', { start: 3, end: 5 }),
+      frameRate: 10,
+      repeat: -1,
+    });
 
-    player = this.physics.add.sprite(GAME_WIDTH / 8, GAME_HEIGHT / 2, 'hero');
+    this.anims.create({
+      key: 'standing',
+      frames: this.anims.generateFrameNumbers('heroStand', { start: 0, end: 3 }),
+      frameRate: 2,
+      repeat: -1,
+    });
 
-    player.setBounce(0.2);
+
+    player = this.physics.add.sprite(GAME_WIDTH / 8, GAME_HEIGHT / 2, 'hero').setScale(2);
+
+    player.setBounce(0.3);
     player.setCollideWorldBounds(true);
+
+    player.body.setSize(25, 20);
     this.Starfield();
     this.Aliens();
     this.Stars();
@@ -64,10 +80,10 @@ export default class GameScene extends Phaser.Scene {
       player.anims.play('right', true);
     } else if (cursors.left.isDown) {
       player.setVelocityX(-400);
-      player.anims.play('right', true);
+      player.anims.play('left', true);
     } else {
       player.setVelocityX(0);
-      player.anims.play('right', false);
+      player.anims.play('standing', true);
     }
 
     if (cursors.up.isDown && player.body.touching.down) {
