@@ -67,7 +67,7 @@ export default class ScoresScene extends Phaser.Scene {
       gameObjects[0].setScale(1);
     });
 
-    this.input.on('wheel', function (pointer, gameObjects, deltaX, deltaY, deltaZ) {
+    this.input.on('wheel', (pointer, gameObjects, deltaX, deltaY) => {
       this.cameras.main.scrollY += deltaY * 10.5;
       if (this.cameras.main.scrollY <= 0) {
         this.cameras.main.scrollY = 0;
