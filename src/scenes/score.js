@@ -1,4 +1,6 @@
 import { GAME_HEIGHT, GAME_WIDTH } from '../config/const-variable';
+import ApiGet from '../module/api';
+
 
 // eslint-disable-next-line no-undef
 export default class ScoresScene extends Phaser.Scene {
@@ -7,6 +9,8 @@ export default class ScoresScene extends Phaser.Scene {
   }
 
   create() {
+    ApiGet('GET', 'Daniel', 114)
+      .then(data => console.log(data));
     this.add.image(GAME_WIDTH / 2, (GAME_HEIGHT / 2), 'sky');
     this.add.image(GAME_WIDTH - 34, GAME_HEIGHT - 34, 'logo').setScale(0.3);
 
