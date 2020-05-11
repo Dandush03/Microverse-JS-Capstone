@@ -62,13 +62,15 @@ As far as now there is just one special movements. You can double jump when you'
 
 ## Built With
 
-- Bundle
-- Ruby
-- Bash
+- HTML5
+- WebPack
+- ES6
+- Sass
 - Vim
 - GitHub
-- Gem
-- Shields.io
+- NPM Nodes
+
+
 
 ---
 
