@@ -70,8 +70,6 @@ As far as now there is just one special movements. You can double jump when you'
 - GitHub
 - NPM Nodes
 
-
-
 ---
 
 ## Support
