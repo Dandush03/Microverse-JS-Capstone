@@ -16,6 +16,13 @@ describe('Test Api', () => {
         expect(data).toEqual('Succeed');
       });
   });
+
+  it('It Should return err message', async () => {
+    ApiGet('POST', 'VERRRRY LONG STRINGGGGGGGGGGGGGGG', 1000000000000)
+      .then(data => {
+        expect(data).toEqual('err');
+      });
+  });
 });
 
 describe('Test User Module', () => {
