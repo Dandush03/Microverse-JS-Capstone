@@ -3,3 +3,10 @@
 * {
   box-sizing: border-box;
 }
+
+body {
+  display: flex;
+  height: $vh-max;
+  justify-content: center;
+  width: $vw-max;
+}
