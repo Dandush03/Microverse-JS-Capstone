@@ -1,0 +1,18 @@
+@import './variables';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  height: $vh-max;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  width: $vw-max;
+
+  > canvas {
+    width: $vw-max;
+  }
+}
