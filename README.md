@@ -35,9 +35,9 @@ You can start playing right away, just click [here](https://dl-game.herokuapp.co
 
 ## Instruction
 
-This is a very basic game, you need to avoid all does facing that are bouncing on the moon surface, mean while you have to collect as much stars as you can in order to get the higher score.
+This is a very basic game, you need to avoid all those facing that are bouncing on the moon surface, meanwhile, you have to collect as many stars as you can to get the higher score.
 
-When the game start you basically have only 3 option arrow Up, Left & Right
+When the game start you have only 3 option arrow Up, Left & Right
 
 ---
 
@@ -56,7 +56,7 @@ All that and more
 
 ## Special
 
-As far as now there is just one special movements. You can double jump when you're ontop of a star :wink:
+As far as now there is just one special movement. You can double jump when you're on top of a star :wink:
 
 ---
 
@@ -90,8 +90,8 @@ Feel free to check the [issues page](./issues/).
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Thanks to Microverse for it Support!
+- Hat tip to anyone who's code was used
+- Thanks to Microverse for its Support!
 
 ---
 
